@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Go Solution",
+      "type": "shell",
+      "command": "go run ${file}",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run JavaScript Solution",
+      "type": "shell",
+      "command": "node ${file}",
+      "group": "test",
+      "problemMatcher": []
+    }
+  ]
+}

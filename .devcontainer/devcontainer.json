@@ -1,0 +1,29 @@
+// For VS Code Dev Container
+{
+  "name": "LeetCode Dev Container (JS & Go)",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    },
+    "ghcr.io/devcontainers/features/go:1": {
+      "version": "latest"
+    }
+  },
+  "postCreateCommand": "go version && node --version && npm --version",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "leetcode.endpoint": "leetcode.com",
+        "leetcode.defaultLanguage": "javascript",
+        "go.toolsManagement.autoUpdate": true
+      },
+      "extensions": [
+        "LeetCode.vscode-leetcode",
+        "ms-vscode.go",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}

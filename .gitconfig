@@ -1,0 +1,44 @@
+[user]
+  name = Vivek
+  email = v.vivekvjn@gmail.com
+[commit]
+# gpgsign = true
+#[include]
+#  path = .config/bash-config/.gitconfig
+[init]
+  defaultBranch = main
+[submodule]
+  recurse = true
+[core]
+  pager = less -FX
+  editor = vim
+[pull]
+  ff = only
+  #rebase = true
+[push]
+  followTags = true
+[alias]
+  rollback = !"git reset --soft HEAD~1"
+  b = !"git branch -avv"
+  lg = !"git lg1"
+  lgt = !"git lgt-specific --all"
+
+  lg1 = !"git lg1-specific --all"
+  lg2 = !"git lg2-specific --all"
+  lg3 = !"git lg3-specific --all"
+
+  lgt-specific = log --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset) - %C(blue)%an%C(reset) %C(white)%s%C(reset) %C(bold black)(%aD)%C(reset)%C(auto)%d%C(reset)'
+
+  lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset) - %C(blue)%an%C(reset) %C(white)%s%C(reset) %C(bold black)(%ar)%C(reset)%C(auto)%d%C(reset)'
+  lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset) - %C(cyan)%aD%C(reset) %C(bold black)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+  lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset) - %C(cyan)%aD%C(reset) %C(bold black)(%ar)%C(reset) %C(cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
+
+  sl = log --oneline --abbrev-commit --decorate -n 25 --pretty=format:'%C(yellow)%h %C(blue)%an%C(reset) %s %C(bold black)(%ar)%C(reset)%C(auto)%d%C(reset)'
+  slt = log --oneline --abbrev-commit --decorate -n 25 --pretty=format:'%C(yellow)%h %C(blue)%an%C(reset) %s %C(bold black)(%aD)%C(reset)%C(auto)%d%C(reset)'
+  nl = log --oneline --abbrev-commit --decorate --name-status -n 10 --pretty=format:'------------------------------------------------------------------%nchangeset: %C(yellow)%h%C(reset) : %C(yellow)%H% %C(auto)%d%C(reset) %nauthor: %C(bold blue)%an %C(reset)%C(blue)<%ae>%C(reset) %ndate: %C(cyan)%aD%C(reset) %nmessage: %C(magenta)%s%n'
+
+  nnl = !"git slt --stat"
+
+  sgl = !"git lg -n 25"
+  sglt = !"git lgt -n 25"
+
